@@ -1,4 +1,29 @@
-# Hashketball
+require 'pry'
+def big_shoe_rebounds
+tournement = game_hash
+shoe_size = []
+tournement.each do |k,v|
+  i=0
+   while i<tournement[k][:players].length do
+
+  tournement[k][:players][i][:shoe]
+
+   shoe_size << tournement[k][:players][i][:shoe]
+
+   largest_shoe_size = shoe_size.max
+
+   tournement[k][:players].each do |all_about_player|
+
+   if  all_about_player[:shoe] == largest_shoe_size
+     #binding.pry
+     return all_about_player[:rebounds]
+
+          end
+      end
+   i+=1
+     end
+    end
+ end # Hashketball
 
 ## Learning Goals
 
