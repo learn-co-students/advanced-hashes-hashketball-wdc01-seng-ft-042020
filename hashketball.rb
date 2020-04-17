@@ -126,4 +126,96 @@ def game_hash
   }
 end
 
+
+def team_colors(name_of_team)
+  game_hash
+  if name_of_team = "Brooklyn Nets"
+    answer = ["Black", "White"] 
+  elsif name_of_team = "Charlotte Hornets"
+    answer =  ["Turquoise", "Purple"]
+  answer
+  #returns team colors
+end
+end
+
+
+
+
+def shoe_size(name_of_player)
+ game_hash
+  stats_array = []
+          game_hash.reduce({}) do |memo, (home_away, second_layer)|
+ #puts memo #empty hash
+               second_layer.reduce({}) do |memo, (key, value)|
+# key # team_color_players
+# value #nets_horns_bw_tp_arrayofplayers
+    if value == "Brooklyn Nets"   
+      elsif value == "Charlotte Hornets" 
+     else
+  value.each do |key2, value2|
+#key2 # black, white, names and stats
+#value2 #=nothing
+
+   if key2 == "White"   
+      elsif key2 == "Black" 
+         elsif key2 == "Turquoise"
+             elsif key2 == "Purple"
+     else
+       key2.each do |key3, value3|
+                  stats_array << value3
+end
+end
+end
+end
+memo
+end
+memo
+end
+     start = stats_array.index(name_of_player)
+        points_position = start + 2
+         player_points = stats_array[points_position]
+puts player_points
+player_points
+end
+
+
+def num_points_scored(name_of_player)
+  game_hash
+  stats_array = []
+          game_hash.reduce({}) do |memo, (home_away, second_layer)|
+ #puts memo #empty hash
+               second_layer.reduce({}) do |memo, (key, value)|
+# key # team_color_players
+# value #nets_horns_bw_tp_arrayofplayers
+    if value == "Brooklyn Nets"   
+      elsif value == "Charlotte Hornets" 
+     else
+  value.each do |key2, value2|
+#key2 # black, white, names and stats
+#value2 #=nothing
+
+   if key2 == "White"   
+      elsif key2 == "Black" 
+         elsif key2 == "Turquoise"
+             elsif key2 == "Purple"
+     else
+       key2.each do |key3, value3|
+                  stats_array << value3
+end
+end
+end
+end
+memo
+end
+memo
+end
+     start = stats_array.index(name_of_player)
+        points_position = start + 3
+         player_points = stats_array[points_position]
+puts player_points
+player_points
+end
+  #returns number of points scored
+
+
 # Write code here
