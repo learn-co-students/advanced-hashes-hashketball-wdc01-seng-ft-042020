@@ -1,3 +1,5 @@
+require "pry"
+
 # Write your code below game_hash
 def game_hash
   {
@@ -127,3 +129,106 @@ def game_hash
 end
 
 # Write code here
+def num_points_scored(player_search)
+  game_hash.each do |team, team_info|
+    team_info[:players].each do |player|
+      if player[:player_name] == player_search
+        return player[:points]
+      end
+    end
+  end
+end
+
+def shoe_size(player_shoesize)
+  game_hash.each do |team, team_info|
+    team_info[:players].each do |player|
+      if player[:player_name] == player_shoesize
+        return player[:shoe]
+      end
+    end
+  end
+end
+
+def team_colors(name)
+  game_hash.each do |team, team_info|
+    if team_info[:team_name] == name
+      return team_info[:colors]
+    end
+  end
+end
+  
+  #if game_hash[:home][:team_name] == "Brooklyn Nets"
+  #  return game_hash[:home][:colors]
+  #else return game_hash[:away][:colors]
+  #end
+#end
+
+def team_names
+ game_hash.map do |team, team_info|
+   team_info[:team_name]
+  end
+end
+
+def player_numbers(name)
+  jersey_numbers = []
+  game_hash.each do |team, team_info|
+    if team_info[:team_name] == name 
+      team_info.each do |attribute, data|
+        if attribute == :players
+          data.each do |player|
+          jersey_numbers.push(player[:number])
+          end
+        end
+      end
+    end
+  end
+  jersey_numbers
+end
+
+def player_stats(name)
+  new_hash = {}
+  game_hash.each do |team, team_info|
+    team_info.each do |attribute, data|
+      if attribute == :players
+        data.each do |player|
+          if player[:player_name] == name
+            new_hash = player
+            new_hash.delete("player_name")
+          end
+        end
+      end
+    end
+  end
+  new_hash
+end
+
+def big_shoe_rebounds
+  big_shoe = 0
+  rebounds = 0
+  game_hash.each do |team, team_info|
+    team_info[:players].each do |player|
+      if player[:shoe] > big_shoe
+        big_shoe = player[:shoe]
+        rebounds = player[:rebounds]
+      end
+    end
+  end
+  return rebounds
+end
+
+def most_points_scored
+  points_scored = 0
+  game_hash.each do |team, team_info|
+    team_info[:players].each do |player|
+      if player[:points] > points_scored
+        points_scored = player[:points]
+      end
+    end
+  end
+  return player
+end
+    
+   
+    
+
+  
